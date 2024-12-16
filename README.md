@@ -4,8 +4,10 @@ This is the complete wireframe design.
 ![Screenshot 2024-12-07 224126](https://github.com/user-attachments/assets/865f3f09-e5b9-4a4d-b5d2-ebbc7993d2f2)
 
 This is the interface the user can see first enter the website
-![1](https://github.com/user-attachments/assets/4d6dee07-9857-4225-8a44-546445f6fa5f)
+![1](https://github.com/user-attachments/assets/4d6dee07-9857-4225-8a44-546445f6fa5f) 
+
 you can find the full figma PDF throught this link --> https://drive.google.com/file/d/1p_Mgy8vgk19slp3qB3FgoFbYNvklk1Tm/view?usp=sharing
+
 Vista Lanka is a user-friendly and visually appealing travel booking web application designed to showcase the beauty and cultural diversity of Sri Lanka. This project focuses on providing travelers with a seamless experience for exploring and booking personalized travel packages.
 
 Features
