@@ -1,0 +1,140 @@
+/* General container for the Registration page */
+.registration-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background image with blur effect */
+.registration-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    z-index: 1;
+}
+
+/* Content overlay to ensure text and elements stand out */
+.registration-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
+    z-index: 2;
+}
+
+/* Header styling */
+.registration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: relative;
+    z-index: 3;
+    color: white;
+}
+
+.registration-logo {
+    width: 100px;
+    height: auto;
+}
+
+.registration-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.registration-nav-item {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.registration-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Centered main content */
+.registration-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 3;
+    position: relative;
+    color: white;
+}
+
+.registration-rectangle {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.registration-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.registration-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.registration-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.registration-button:hover {
+    background-color: #e64a19;
+}
+
+/* Search bar */
+.registration-search {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    flex: 1;
+}
+
+.search-icon {
+    padding: 10px;
+    background-color: #ff5722;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Offers section */
+.registration-offers {
+    text-align: center;
+    margin: 50px 0;
+}

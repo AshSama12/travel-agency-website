@@ -1,0 +1,199 @@
+/* General container */
+.signin-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Left half with background image */
+.signin-left {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Right half with solid blue color and logo */
+.signin-right {
+  width: 50%;
+  height: 100%;
+  background-color: #1b2137;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  padding-top: 20px;
+}
+
+.signin-side-logo {
+  width: 180px; /* Larger logo size */
+}
+
+.signin-tagline {
+  position: absolute;
+  bottom: 30px;
+  font-family: "Island Moments", cursive;
+  font-size: 22px;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
+
+/* White box in the center */
+.signin-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 30px;
+  width: 400px;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.signin-box:hover {
+  transform: translate(-50%, -50%) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo styling */
+.signin-logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* Heading */
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Input group styling */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+.input-group:hover {
+  border-color: #004481;
+}
+
+.input-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.signin-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+/* Sign-in button styling */
+.signin-button {
+  width: 100%;
+  background-color: #004481;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.signin-button:hover {
+  background-color: #002f5e;
+  transform: scale(1.02);
+}
+
+/* Footer */
+.signin-footer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signin-footer a {
+  color: #004481;
+  text-decoration: none;
+}
+
+.signin-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Social sign-in buttons */
+.signin-options {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.options-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.option-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.option-button:hover {
+  transform: scale(1.05);
+}
+
+.option-button.google {
+  background-color: #db4437;
+  color: white;
+}
+
+.option-button.google:hover {
+  background-color: #c33c2e;
+}
+
+.option-button.facebook {
+  background-color: #4267b2;
+  color: white;
+}
+
+.option-button.facebook:hover {
+  background-color: #365899;
+}
+
+/* Social icons */
+.signin-social-icon {
+  width: 20px;
+  height: 20px;
+}

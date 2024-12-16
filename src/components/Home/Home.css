@@ -1,0 +1,160 @@
+/* General container for the Home page */
+.home-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background image with blur effect */
+.home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/background.png") no-repeat center center / cover;
+    filter: blur(3px);
+    z-index: 1;
+}
+
+/* Content overlay to ensure text and elements stand out */
+.home-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
+    z-index: 2;
+}
+
+/* Header styling */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: relative;
+    z-index: 3;
+    color: white;
+}
+
+.home-logo {
+    width: 100px;
+    height: auto;
+}
+
+.home-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-nav-item {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.home-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Centered main content */
+.home-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    z-index: 3;
+    position: relative;
+    color: white;
+}
+
+.home-rectangle {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.home-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.home-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.home-button:hover {
+    background-color: #e64a19;
+}
+
+/* Search bar */
+.home-search {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    flex: 1;
+}
+
+.search-icon {
+    padding: 10px;
+    background-color: #ff5722;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Offers section */
+.home-offers {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.offers-images {
+    display: flex;
+    gap: 20px; /* Space between images */
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures proper layout on smaller screens */
+}
+
+.offer-image {
+    width: 250px; /* Image size */
+    height: auto;
+    border: 3px solid #fff; /* White border for visibility */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Add shadow for emphasis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.offer-image:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* More shadow on hover */
+}

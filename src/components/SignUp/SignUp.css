@@ -1,0 +1,153 @@
+/* General container */
+.signup-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Left half with solid color */
+.signup-left {
+  width: 50%;
+  height: 100%;
+  background-color: #1b2137; /* Solid color on the left side */
+}
+
+/* Right half with background image */
+.signup-right {
+  width: 50%;
+  height: 100%;
+  background: url("C:/Users/ccs/Desktop/7SEM/HCI/2020e139_vistaLanka/vistalanka/src/assets/background2.png") 
+    no-repeat center center / cover;
+}
+
+/* White box in the center */
+.signup-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 30px;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Logo styling */
+.signup-logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* Heading */
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input group styling */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Icon styling */
+.input-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+/* Input field styling */
+.signup-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Sign-up button styling */
+.signup-button {
+  width: 100%;
+  background-color: #004481;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #002f5e;
+}
+
+/* Footer text styling */
+.signup-footer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-footer a {
+  color: #004481;
+  text-decoration: none;
+}
+
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Options for signing in with Google/Facebook */
+.signup-options {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.options-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.option-button {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.option-button.google {
+  background-color: #db4437;
+  color: white;
+}
+
+.option-button.google:hover {
+  background-color: #c33c2e;
+}
+
+.option-button.facebook {
+  background-color: #4267b2;
+  color: white;
+}
+
+.option-button.facebook:hover {
+  background-color: #365899;
+}
