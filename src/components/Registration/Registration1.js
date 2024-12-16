@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Registration1.css";
 import background from "../../assets/background.png";
+import profileIcon from "../../assets/icons/PersonCircle.png"; // Profile Icon
+import logo from "../../assets/logo.png"; // Logo
 
 const Registration1 = () => {
     const navigate = useNavigate();
@@ -48,14 +50,19 @@ const Registration1 = () => {
 
     const handleNext = () => {
         if (validateForm()) {
-            // Navigate to the next step in the registration process
             console.log("Form submitted:", formData);
-            navigate("/registration2"); // Adjust the path for the next step
+            navigate("/registration2"); // Navigate to Registration2
         }
     };
 
     return (
         <div className="registration1-container">
+            {/* Profile Icon */}
+            <img src={profileIcon} alt="Profile" className="profile-icon" />
+
+            {/* Logo */}
+            <img src={logo} alt="Logo" className="registration1-logo" />
+
             {/* Background with blur */}
             <div
                 className="registration1-background"
