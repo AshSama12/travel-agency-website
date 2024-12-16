@@ -68,8 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
+
 # Vista-Lanka-Web-Page
 This is my latest ongoing project and yet only I complete the figma design. And hope to complete this with React
 This is the complete wireframe design.
