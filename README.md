@@ -92,4 +92,4 @@ Design: Figma
 Development: Designed for future implementation with HTML, CSS, and JavaScript frameworks.
 Objective
 The goal of Vista Lanka is to simplify travel planning and provide users with a platform that highlights Sri Lanka’s natural and cultural heritage.
->>>>>>> 6e196e85d60ae3969e0d2853bebe1c87115dcf86
+
