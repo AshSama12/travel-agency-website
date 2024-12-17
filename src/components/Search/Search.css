@@ -1,0 +1,66 @@
+.search-page {
+    font-family: Arial, sans-serif;
+    background: url("../assets/background.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .search-bar {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .search-bar input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  .suggestions {
+    background: white;
+    color: black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+  
+  .suggestions li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestions li:hover {
+    background: #ddd;
+  }
+  
+  .map-container {
+    margin: 20px 0;
+  }
+  
+  .recent-searches h3 {
+    text-align: center;
+  }
+  
+  .recent-searches ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recent-searches li {
+    background: #444;
+    padding: 8px;
+    margin: 5px auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  

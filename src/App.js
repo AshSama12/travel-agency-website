@@ -1,31 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './components/NavBar/Nav'; // Import NavBar
+import Footer from './components/Footer/Footer'; // Import Footer
 import Home from './components/Home/Home';
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import RegistrationHome from './components/Registration/RegistrationHome';
 import Registration1 from './components/Registration/Registration1';
 import Registration2 from './components/Registration/Registration2';
-import Registration3 from './components/Registration/Registration3'; // Import Registration3
+import Registration3 from './components/Registration/Registration3';
 import Logout from './components/LogOut/Logout';
+import Booking from './components/Bookings/Booking';
+import Profile from './components/Profile/profile'; // Added Profile for dropdown integration
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* Navigation bar */}
-        <header className="App-header">
-          <nav className="nav">
-            <Link className="nav-item" to="/">Home</Link>
-            <Link className="nav-item" to="/signin">Sign In</Link>
-            <Link className="nav-item" to="/signup">Sign Up</Link>
-            <Link className="nav-item" to="/registration">Registration</Link>
-            <Link className="nav-item" to="/logout">Logout</Link>
-          </nav>
-        </header>
+        {/* Navigation Bar */}
+        <Nav />
 
-        {/* Main content */}
+        {/* Main Content */}
         <main className="App-content">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -34,15 +30,14 @@ function App() {
             <Route path="/registration" element={<RegistrationHome />} />
             <Route path="/registration1" element={<Registration1 />} />
             <Route path="/registration2" element={<Registration2 />} />
-            <Route path="/registration3" element={<Registration3 />} /> {/* Add Registration3 */}
+            <Route path="/registration3" element={<Registration3 />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/booking" element={<Booking />} />
           </Routes>
         </main>
 
         {/* Footer */}
-        <footer className="App-footer">
-          <p>© 2024 Vista Lanka. All rights reserved.</p>
-        </footer>
+        <Footer />
       </div>
     </Router>
   );

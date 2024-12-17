@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Home.css";
 import logo from "../../assets/logo.png";
 import profileLogo from "../../assets/PersonCircle.png";
@@ -9,6 +10,12 @@ import frame19 from "../../assets/Frame 19.png";
 import frame20 from "../../assets/Frame 21.png";
 
 const Home = () => {
+    const navigate = useNavigate(); // Initialize navigate
+
+    const handleBookingClick = () => {
+        navigate("/booking"); // Redirect to booking page
+    };
+
     return (
         <div className="home-container">
             {/* Background image with blur */}
@@ -33,7 +40,9 @@ const Home = () => {
                 <div className="home-rectangle">
                     <h1 className="home-title">Explore The Sri Lanka With Your Ease</h1>
                     <p className="home-subtitle">START YOUR BOOKING NOW...</p>
-                    <button className="home-button">BOOKING NOW</button>
+                    <button className="home-button" onClick={handleBookingClick}>
+                        BOOKING NOW
+                    </button>
 
                     <div className="home-search">
                         <input
