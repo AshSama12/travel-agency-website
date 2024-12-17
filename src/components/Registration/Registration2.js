@@ -41,8 +41,7 @@ const Registration2 = () => {
     const handleNext = () => {
         if (validateForm()) {
             console.log("Emergency Information Submitted:", formData);
-            // Navigate to the next step or process as needed
-            alert("Registration Completed!");
+            navigate("/registration3"); // Navigate to the Registration3 page
         }
     };
 
