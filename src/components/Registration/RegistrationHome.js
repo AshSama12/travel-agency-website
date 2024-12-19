@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./RegistrationHome.css";
 import logo from "../../assets/logo.png";
-import profileLogo from "../../assets/PersonCircle.png";
 import searchIcon from "../../assets/search.png";
 import background from "../../assets/background.png";
 
@@ -25,18 +24,6 @@ const RegistrationHome = () => {
             {/* Header */}
             <header className="registration-header">
                 <img src={logo} alt="Logo" className="registration-logo" />
-                <nav className="registration-nav">
-                    <span className="registration-nav-item">Home</span>
-                    <span className="registration-nav-item">About</span>
-                    <span className="registration-nav-item">Reviews</span>
-                    <span className="registration-nav-item">Packages</span>
-                    <span className="registration-nav-item">Contact</span>
-                    <img
-                        src={profileLogo}
-                        alt="Profile"
-                        className="registration-profile"
-                    />
-                </nav>
             </header>
 
             {/* Main content */}

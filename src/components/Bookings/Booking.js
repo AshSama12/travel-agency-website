@@ -1,7 +1,7 @@
 import React from 'react';
 import './Booking.css';
 import background from '../../assets/background.png';
-import logo from '../../assets/icons/PersonCircle.png';
+
 import flag from '../../assets/flag.png'; // Add your flag image
 import sigiriya from '../../assets/sigiriya.png';
 import yarla from '../../assets/yarla.png';
@@ -15,7 +15,7 @@ function Booking() {
       <div className="booking-content">
         {/* Left side: Logo */}
         <div className="booking-left">
-          <img src={logo} alt="Profile Circle" className="profile-icon" />
+        
         </div>
 
         {/* Right side: Content */}

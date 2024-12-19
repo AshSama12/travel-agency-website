@@ -1,8 +1,7 @@
-import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import logo from "../../assets/logo.png";
-import profileLogo from "../../assets/PersonCircle.png";
 import searchIcon from "../../assets/search.png";
 import frame17 from "../../assets/Frame 17.png";
 import frame18 from "../../assets/Frame 18.png";
@@ -11,9 +10,20 @@ import frame20 from "../../assets/Frame 21.png";
 
 const Home = () => {
     const navigate = useNavigate(); // Initialize navigate
+    const [searchTerm, setSearchTerm] = useState(""); // State to track search input
 
-    const handleBookingClick = () => {
-        navigate("/booking"); // Redirect to booking page
+    const handleSearch = () => {
+        if (searchTerm.trim()) {
+            navigate(`/search?query=${searchTerm}`); // Redirect to Search page with query
+        } else {
+            navigate("/search"); // Redirect to Search page without query
+        }
+    };
+
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            handleSearch(); // Trigger search on Enter key
+        }
     };
 
     return (
@@ -25,14 +35,6 @@ const Home = () => {
             {/* Header */}
             <header className="home-header">
                 <img src={logo} alt="Logo" className="home-logo" />
-                <nav className="home-nav">
-                    <span className="home-nav-item">Home</span>
-                    <span className="home-nav-item">About</span>
-                    <span className="home-nav-item">Reviews</span>
-                    <span className="home-nav-item">Packages</span>
-                    <span className="home-nav-item">Contact</span>
-                    <img src={profileLogo} alt="Profile" className="home-profile" />
-                </nav>
             </header>
 
             {/* Main content */}
@@ -40,17 +42,23 @@ const Home = () => {
                 <div className="home-rectangle">
                     <h1 className="home-title">Explore The Sri Lanka With Your Ease</h1>
                     <p className="home-subtitle">START YOUR BOOKING NOW...</p>
-                    <button className="home-button" onClick={handleBookingClick}>
-                        BOOKING NOW
-                    </button>
 
+                    {/* Search bar */}
                     <div className="home-search">
                         <input
                             type="text"
                             placeholder="Search..."
                             className="search-input"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onKeyDown={handleKeyPress} // Handle Enter key press
                         />
-                        <img src={searchIcon} alt="Search" className="search-icon" />
+                        <img
+                            src={searchIcon}
+                            alt="Search"
+                            className="search-icon"
+                            onClick={handleSearch} // Trigger search on icon click
+                        />
                     </div>
                 </div>
 

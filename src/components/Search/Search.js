@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import "./Search.css"; // Styling for the page
+import "./Search.css";
 
-// List of places with coordinates
 const places = [
   { name: "Sigiriya", lat: 7.957, lng: 80.760 },
   { name: "Temple of the Tooth Relic", lat: 7.294, lng: 80.641 },
@@ -32,66 +32,62 @@ const places = [
   { name: "Ravana Falls", lat: 6.842, lng: 81.049 },
   { name: "Knuckles Mountain Range", lat: 7.457, lng: 80.799 },
   { name: "Colombo Lotus Tower", lat: 6.922, lng: 79.862 },
-  { name: "Royal Botanic Gardens", lat: 7.271, lng: 80.595 },
-];
+  { name: "Royal Botanic Gardens", lat: 7.271, lng: 80.595 },];
+
 
 const Search = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedPlace, setSelectedPlace] = useState(null);
-  const [recentSearches, setRecentSearches] = useState([]);
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const initialQuery = queryParams.get("query") || "";
 
-  const handleSearch = (place) => {
-    setSelectedPlace(place);
-    setRecentSearches((prev) => [place, ...prev.slice(0, 4)]);
-  };
+    const [searchTerm, setSearchTerm] = useState(initialQuery);
+    const [selectedPlace, setSelectedPlace] = useState(null);
 
-  // Filter places based on search term
-  const filteredPlaces = places.filter((place) =>
-    place.name.toLowerCase().startsWith(searchTerm.toLowerCase())
-  );
+    useEffect(() => {
+        if (initialQuery) {
+            const match = places.find((place) =>
+                place.name.toLowerCase().includes(initialQuery.toLowerCase())
+            );
+            setSelectedPlace(match || null);
+        }
+    }, [initialQuery]);
 
-  return (
-    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-      <div className="search-page">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search for places..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <ul className="suggestions">
-            {filteredPlaces.map((place, index) => (
-              <li key={index} onClick={() => handleSearch(place)}>
-                {place.name}
-              </li>
-            ))}
-          </ul>
-        </div>
+    const filteredPlaces = places.filter((place) =>
+        place.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-        <div className="map-container">
-          {selectedPlace && (
-            <GoogleMap
-              center={{ lat: selectedPlace.lat, lng: selectedPlace.lng }}
-              zoom={10}
-              mapContainerStyle={{ height: "400px", width: "100%" }}
-            >
-              <Marker position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }} />
-            </GoogleMap>
-          )}
-        </div>
-
-        <div className="recent-searches">
-          <h3>Recent Searches</h3>
-          <ul>
-            {recentSearches.map((place, index) => (
-              <li key={index}>{place.name}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </LoadScript>
-  );
+    return (
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+            <div className="search-page">
+                <div className="search-bar">
+                    <input
+                        type="text"
+                        placeholder="Search for places..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <ul className="suggestions">
+                        {filteredPlaces.map((place) => (
+                            <li key={place.name} onClick={() => setSelectedPlace(place)}>
+                                {place.name}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="map-container">
+                    {selectedPlace && (
+                        <GoogleMap
+                            center={{ lat: selectedPlace.lat, lng: selectedPlace.lng }}
+                            zoom={10}
+                            mapContainerStyle={{ height: "400px", width: "100%" }}
+                        >
+                            <Marker position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }} />
+                        </GoogleMap>
+                    )}
+                </div>
+            </div>
+        </LoadScript>
+    );
 };
 
 export default Search;

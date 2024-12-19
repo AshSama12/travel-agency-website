@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Registration3.css"; // Import corresponding CSS
 import background from "../../assets/background.png";
-import profileIcon from "../../assets/icons/PersonCircle.png"; // Profile Icon
 import logo from "../../assets/logo.png"; // Logo
 
 const Registration3 = () => {
@@ -46,8 +45,7 @@ const Registration3 = () => {
 
   return (
     <div className="registration3-container">
-      {/* Profile Icon */}
-      <img src={profileIcon} alt="Profile" className="profile-icon" />
+      
 
       {/* Logo */}
       <img src={logo} alt="Logo" className="registration3-logo" />

@@ -1,6 +1,6 @@
 .search-page {
     font-family: Arial, sans-serif;
-    background: url("../assets/background.png") no-repeat center center fixed;
+    background-image: url('../../assets/background.png');
     background-size: cover;
     color: white;
     min-height: 100vh;
@@ -63,4 +63,5 @@
     text-align: center;
     border-radius: 5px;
   }
+  
   

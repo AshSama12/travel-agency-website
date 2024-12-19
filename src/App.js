@@ -11,7 +11,8 @@ import Registration2 from './components/Registration/Registration2';
 import Registration3 from './components/Registration/Registration3';
 import Logout from './components/LogOut/Logout';
 import Booking from './components/Bookings/Booking';
-import Profile from './components/Profile/profile'; // Added Profile for dropdown integration
+import Search from './components/Search/Search'; // Import Search
+
 import './App.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path="/registration3" element={<Registration3 />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/search" element={<Search />} /> {/* Search route */}
           </Routes>
         </main>
 
