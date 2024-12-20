@@ -12,6 +12,8 @@ import Registration3 from './components/Registration/Registration3';
 import Logout from './components/LogOut/Logout';
 import Booking from './components/Bookings/Booking';
 import Search from './components/Search/Search'; // Import Search
+import About from './components/About/About'; // Import About
+import Packages from './components/Packages/Packages';
 
 import './App.css';
 
@@ -35,6 +37,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/search" element={<Search />} /> {/* Search route */}
+            <Route path="/about" element={<About />} /> {/* About route */}
+            <Route path="/packages" element={<Packages />} /> {/* Fixed route */}
           </Routes>
         </main>
 

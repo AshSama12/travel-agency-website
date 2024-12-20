@@ -1,0 +1,75 @@
+/* Ensure only the background is blurred */
+.packages-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Blurred Background */
+  .packages-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('C:/Users/ccs/Desktop/7SEM/HCI/2020e139_vistaLanka/vistalanka/src/assets/packagebackground.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1; /* Send it behind other elements */
+  }
+  
+  .packages-heading {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 50px;
+    z-index: 1; /* Keep the heading above the background */
+  }
+  
+  .packages-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: relative; /* Ensure content appears above background */
+    z-index: 1; /* Keep this above the blurred background */
+  }
+  
+  .package-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add animation */
+  }
+  
+  .package-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Animation on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  }
+  
+  .package-image {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Image hover animation */
+  }
+  
+  .package-card:hover .package-image {
+    transform: scale(1.1); /* Slight zoom effect on image hover */
+  }
+  
+  .package-card h2 {
+    margin: 15px 0 10px;
+  }
+  
+  .package-card p {
+    color: #555;
+  }
+  
