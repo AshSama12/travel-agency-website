@@ -14,6 +14,8 @@ import Booking from './components/Bookings/Booking';
 import Search from './components/Search/Search'; // Import Search
 import About from './components/About/About'; // Import About
 import Packages from './components/Packages/Packages';
+import Review from './components/Reviews/Review'; // Import Review
+import Contact from './components/Contact/Contact'; // Import Contact
 
 import './App.css';
 
@@ -38,7 +40,9 @@ function App() {
             <Route path="/booking" element={<Booking />} />
             <Route path="/search" element={<Search />} /> {/* Search route */}
             <Route path="/about" element={<About />} /> {/* About route */}
-            <Route path="/packages" element={<Packages />} /> {/* Fixed route */}
+            <Route path="/packages" element={<Packages />} /> {/* Packages route */}
+            <Route path="/reviews" element={<Review />} /> {/* Review route */}
+            <Route path="/contact" element={<Contact />} /> {/* Contact route */}
           </Routes>
         </main>
 

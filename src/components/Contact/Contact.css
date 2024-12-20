@@ -1,0 +1,138 @@
+.contact-container {
+    width: 100%;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px; /* Centers and limits the width */
+  }
+  
+  .contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .contact-icons {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 80%; /* Take more space */
+    max-width: 500px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-item:active {
+    transform: translateY(2px);
+  }
+  
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .phone-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .phone-number {
+    font-size: 1.2rem;
+    color: #007bff;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 8px 0;
+  }
+  
+  .phone-number:hover {
+    color: #0056b3;
+  }
+  
+  .chat-button {
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .chat-button:hover {
+    background-color: #128C7E;
+  }
+  
+  .email-button {
+    display: flex;
+    align-items: center;
+    color: #0077b5;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 12px 25px;
+    border: 2px solid #0077b5;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .email-button:hover {
+    background-color: #0077b5;
+    color: white;
+  }
+  
+  .email-button:active {
+    transform: translateY(1px);
+  }
+  
+  @media (min-width: 768px) {
+    .contact-icons {
+      flex-direction: row; /* Stack items horizontally on larger screens */
+      justify-content: space-around;
+    }
+  
+    .contact-item {
+      width: 30%;
+      margin-bottom: 0;
+    }
+  }
+  
