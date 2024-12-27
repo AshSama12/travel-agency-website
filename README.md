@@ -33,6 +33,32 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Vista Lanka Travel Agency Website
+
+Vista Lanka is a comprehensive travel agency website that offers users the ability to explore travel packages, book trips, view reviews and ratings, and access various travel-related features. Built with a focus on user experience, responsiveness, and modern design, this project aims to create an interactive and user-friendly platform for travel enthusiasts.
+
+---
+
+## 🚀 Features
+
+- **Dynamic Home Page**: Interactive images that represent rivers, beaches, safaris, forests, and cultural landmarks.
+- **User Authentication**: Secure sign-in and sign-up functionality.
+- **Booking System**: A multi-step registration process for seamless trip bookings.
+- **Travel Packages**: Detailed package information with animations for a better user experience.
+- **Reviews and Ratings**: Users can write and read reviews about travel packages.
+- **Responsive Design**: The website is optimized for all devices, ensuring a consistent experience.
+- **Interactive Animations**: Hover effects and smooth transitions for enhanced engagement.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js, CSS, HTML
+- **Backend**: Node.js (if applicable for future backend features)
+- **Styling**: Custom CSS with animations
+- **Design Tools**: Figma (for prototyping and UI design)
+
+---
 
 If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
