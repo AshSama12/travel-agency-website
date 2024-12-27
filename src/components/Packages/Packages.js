@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Packages.css'; // Import the CSS file
 import basicPackage from '../../assets/Frame 22.png'; // Basic package image
 import premiumPackage from '../../assets/Frame 23.png'; // Premium package image
 
 const Packages = () => {
+  const navigate = useNavigate();
+
+  const handlePremiumClick = () => {
+    navigate('/premium');
+  };
+
   return (
     <div className="packages-container">
       {/* Blurred Background */}
@@ -22,7 +29,7 @@ const Packages = () => {
         </div>
 
         {/* Premium Package */}
-        <div className="package-card">
+        <div className="package-card" onClick={handlePremiumClick} style={{ cursor: 'pointer' }}>
           <img src={premiumPackage} alt="Premium Package" className="package-image" />
           <h2>Premium Package</h2>
           <p>Enjoy luxurious travel with exclusive features and services.</p>

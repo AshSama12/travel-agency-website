@@ -2,14 +2,22 @@ import React, { useState } from "react";
 import './Review.css';
 import { FaStar } from 'react-icons/fa';
 
+// Import profile images
+import profilePic1 from '../../assets/Ellipse 9.png';
+import profilePic2 from '../../assets/Ellipse 10.png';
+import profilePic3 from '../../assets/Ellipse 11.png';
+import profilePic4 from '../../assets/Ellipse 12.png';
+import profilePic5 from '../../assets/Ellipse 13.png';
+import profilePic6 from '../../assets/Ellipse 14.png';
+
 // Sample Reviews
 const sampleReviews = [
-  { name: "Ashini", profilePic: "/assets/Ellipse 9.png", rating: 4, review: "Great experience, highly recommend this place for everyone!" },
-  { name: "Lakshika", profilePic: "/assets/Ellipse 10.png", rating: 5, review: "Absolutely loved it! The service was top-notch, would definitely come back." },
-  { name: "Vindya", profilePic: "/assets/Ellipse 11.png", rating: 3, review: "It was okay. Could use some improvements, but overall decent." },
-  { name: "Tharini", profilePic: "/assets/Ellipse 12.png", rating: 4, review: "Beautiful experience, the place is fantastic but a little crowded." },
-  { name: "Nishan", profilePic: "/assets/Ellipse 13.png", rating: 2, review: "Not as expected, disappointing experience with some aspects." },
-  { name: "Kavya", profilePic: "/assets/Ellipse 14.png", rating: 5, review: "A wonderful visit, highly recommend the service and views!" },
+  { name: "Ashini", profilePic: profilePic1, rating: 4, review: "Great experience, highly recommend this place for everyone!" },
+  { name: "Lakshika", profilePic: profilePic2, rating: 5, review: "Absolutely loved it! The service was top-notch, would definitely come back." },
+  { name: "Vindya", profilePic: profilePic3, rating: 3, review: "It was okay. Could use some improvements, but overall decent." },
+  { name: "Tharini", profilePic: profilePic4, rating: 4, review: "Beautiful experience, the place is fantastic but a little crowded." },
+  { name: "Nishan", profilePic: profilePic5, rating: 2, review: "Not as expected, disappointing experience with some aspects." },
+  { name: "Kavya", profilePic: profilePic6, rating: 5, review: "A wonderful visit, highly recommend the service and views!" },
 ];
 
 const Review = () => {
@@ -21,7 +29,7 @@ const Review = () => {
   const handleRatingChange = (value) => setRating(value);
 
   const handleSubmitReview = () => {
-    const newReviewObj = { name: "New User", profilePic: "/assets/Ellipse 9.png", rating, review: newReview };
+    const newReviewObj = { name: "New User", profilePic: profilePic1, rating, review: newReview };
     setReviews([...reviews, newReviewObj]);
     setNewReview(""); // Reset the review input
     setRating(0); // Reset the rating
@@ -45,8 +53,8 @@ const Review = () => {
           <div key={index} className="review-card">
             <div className="review-header">
               <img src={review.profilePic} alt="Profile" className="profile-icon" />
-              <div className="review-author">
-                <span>{review.name}</span>
+              <div className="review-details">
+                <span className="review-author">{review.name}</span>
                 <div className="star-rating">
                   {[...Array(5)].map((_, i) => (
                     <FaStar key={i} className={i < review.rating ? "filled" : ""} />
@@ -54,9 +62,7 @@ const Review = () => {
                 </div>
               </div>
             </div>
-            <p className="review-text">
-              {review.review.length > 100 ? review.review.slice(0, 100) + "... <span className='see-more'>See more</span>" : review.review}
-            </p>
+            <p className="review-text">{review.review}</p>
           </div>
         ))}
       </div>
