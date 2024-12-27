@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Profile from '../Profile/profile'; // Import Profile component
 import './Nav.css';
+import logo from '../../assets/logo.png'; // Import your logo
 
 function Nav() {
   return (
     <nav className="nav">
       <div className="nav-logo">
-        <Link to="/" className="nav-item">Vista Lanka</Link>
+        <img src={logo} alt="Vista Lanka Logo" className="nav-logo-img" />
+        <Link to="/" className="nav-logo-name">Vista Lanka</Link>
       </div>
       <ul className="nav-links">
         <li><Link className="nav-item" to="/">Home</Link></li>
