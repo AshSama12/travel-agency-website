@@ -17,6 +17,8 @@ import Packages from './components/Packages/Packages';
 import Review from './components/Reviews/Review'; // Import Review
 import Contact from './components/Contact/Contact'; // Import Contact
 import Premium from './components/Packages/Premium'; // Import Premium component
+import Basic from './components/Packages/basic'; // Import Basic component
+
 
 import './App.css';
 
@@ -45,6 +47,8 @@ function App() {
             <Route path="/reviews" element={<Review />} /> {/* Review route */}
             <Route path="/contact" element={<Contact />} /> {/* Contact route */}
             <Route path="/premium" element={<Premium />} />
+            <Route path="/basic" element={<Basic />} /> {/* Add this line */}
+
             
           </Routes>
         </main>

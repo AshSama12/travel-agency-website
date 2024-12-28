@@ -8,7 +8,11 @@ const Packages = () => {
   const navigate = useNavigate();
 
   const handlePremiumClick = () => {
-    navigate('/premium');
+    navigate('/premium'); // Navigate to Premium page
+  };
+
+  const handleBasicClick = () => {
+    navigate('/basic'); // Navigate to Basic page
   };
 
   return (
@@ -22,14 +26,22 @@ const Packages = () => {
       {/* Packages Section */}
       <div className="packages-options">
         {/* Basic Package */}
-        <div className="package-card">
+        <div
+          className="package-card"
+          onClick={handleBasicClick}
+          style={{ cursor: 'pointer' }}
+        >
           <img src={basicPackage} alt="Basic Package" className="package-image" />
           <h2>Basic Package</h2>
           <p>Perfect for short trips and budget-friendly adventures.</p>
         </div>
 
         {/* Premium Package */}
-        <div className="package-card" onClick={handlePremiumClick} style={{ cursor: 'pointer' }}>
+        <div
+          className="package-card"
+          onClick={handlePremiumClick}
+          style={{ cursor: 'pointer' }}
+        >
           <img src={premiumPackage} alt="Premium Package" className="package-image" />
           <h2>Premium Package</h2>
           <p>Enjoy luxurious travel with exclusive features and services.</p>
