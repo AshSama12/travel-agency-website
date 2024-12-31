@@ -1,3 +1,4 @@
+/* Overall Container */
 .packages-container {
   padding: 20px;
   background-size: cover;
@@ -7,46 +8,85 @@
   align-items: center;
 }
 
+.packages-title {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.basic-image {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
 .search-bar {
   display: flex;
   align-items: center;
   margin: 20px auto;
-  width: 80%; /* Set search bar width */
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.search-bar .search-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px; /* Add space between icon and input */
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
 .search-bar input {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 100%;
+  border: none;
+  outline: none;
   font-size: 16px;
+  padding: 5px;
 }
 
+.search-bar input::placeholder {
+  color: #888;
+}
+
+/* Packages Grid with Horizontal Scroll */
 .packages-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-height: 600px; /* Limit the height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  width: 90%; /* Adjust the grid width */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 20px; /* Space between cards */
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8); /* Optional for contrast */
-  border-radius: 10px;
+  white-space: nowrap; /* Prevent wrapping */
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
+.packages-grid::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.packages-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.packages-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.packages-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Individual Package Card */
 .package-card {
-  background: white;
+  flex: 0 0 auto; /* Prevent shrinking */
+  width: 300px; /* Card width */
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
   text-align: center;
-  width: calc(30% - 10px); /* Adjust width for better layout */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .package-card h2 {
@@ -71,4 +111,19 @@
 
 .explore-button:hover {
   background-color: #0056b3;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 90%;
+  }
+
+  .packages-grid {
+    gap: 10px;
+  }
+
+  .package-card {
+    width: 250px;
+  }
 }

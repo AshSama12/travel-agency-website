@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Ensures all children are vertically aligned */
   background-color: #000000; /* Deep brown for elegance */
   padding: 20px 40px; /* Increased padding for height */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for a premium feel */
@@ -31,6 +31,7 @@
   gap: 25px;
   margin-left: auto;
   padding: 0;
+  align-items: center; /* Align links vertically */
 }
 
 .nav-item {
@@ -45,5 +46,7 @@
 }
 
 .profile-container {
+  display: flex;
+  align-items: center; /* Ensures the profile icon aligns vertically */
   margin-left: 30px; /* Space between nav links and profile */
 }

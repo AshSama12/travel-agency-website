@@ -14,7 +14,7 @@
     width: 100%;
     height: 100%;
     background: url("../../assets/background.png") no-repeat center center / cover;
-    filter: blur(3px);
+    filter: blur(7px);
     z-index: 1;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .home-logo {
-    width: 100px;
+    width: 0;
     height: auto;
 }
 
@@ -74,11 +74,11 @@
     height: 100%;
     z-index: 3;
     position: relative;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .home-rectangle {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(252, 249, 249, 0.726);
     padding: 20px;
     border-radius: 15px;
     text-align: center;
@@ -95,19 +95,24 @@
     margin-bottom: 20px;
 }
 
-.home-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background-color: #EA9121;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
+/* Animation for subtitle */
+.animated-text {
+    font-family: "Cursive", Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #EA9121;
+    animation: fadeInAndScale 3s infinite alternate ease-in-out;
 }
 
-.home-button:hover {
-    background-color: #EA9121;
+@keyframes fadeInAndScale {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
 /* Search bar */

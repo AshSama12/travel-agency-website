@@ -41,7 +41,9 @@ const Home = () => {
             <main className="home-center">
                 <div className="home-rectangle">
                     <h1 className="home-title">Explore The Sri Lanka With Your Ease</h1>
-                    <p className="home-subtitle">START YOUR BOOKING NOW...</p>
+                    <p className="home-subtitle animated-text">
+                        START YOUR BOOKING NOW...
+                    </p>
 
                     {/* Search bar */}
                     <div className="home-search">

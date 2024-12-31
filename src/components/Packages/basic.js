@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Packages.css";
-import background from "../../assets/packagebackground.png";
+import background from "../../assets/background.png";
 import basicImage from "../../assets/basic.png";
 import searchIcon from "../../assets/search.png";
 
@@ -51,8 +51,8 @@ const Packages = () => {
         />
       </div>
 
-      {/* Packages Grid with Scroll */}
-      <div className="packages-grid scrollable">
+      {/* Packages Grid with Horizontal Scroll */}
+      <div className="packages-grid">
         {filteredPackages.length > 0 ? (
           filteredPackages.map((pkg) => (
             <div key={pkg.id} className="package-card">
