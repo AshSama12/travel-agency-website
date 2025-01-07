@@ -26,6 +26,10 @@ const Home = () => {
         }
     };
 
+    const handleBooking = () => {
+        navigate("/booking"); // Redirect to the booking page
+    };
+
     return (
         <div className="home-container">
             {/* Background image with blur */}
@@ -44,6 +48,11 @@ const Home = () => {
                     <p className="home-subtitle animated-text">
                         START YOUR BOOKING NOW...
                     </p>
+
+                    {/* Booking Now Button */}
+                    <button className="booking-button" onClick={handleBooking}>
+                        BOOKING NOW
+                    </button>
 
                     {/* Search bar */}
                     <div className="home-search">

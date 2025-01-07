@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LoremIpsum } from "lorem-ipsum";
 import './Review.css';
 import { FaStar } from 'react-icons/fa';
 
@@ -10,20 +11,32 @@ import profilePic4 from '../../assets/Ellipse 12.png';
 import profilePic5 from '../../assets/Ellipse 13.png';
 import profilePic6 from '../../assets/Ellipse 14.png';
 
-// Sample Reviews
-const sampleReviews = [
-  { name: "Ashini", profilePic: profilePic1, rating: 4, review: "Great experience, highly recommend this place for everyone!" },
-  { name: "Lakshika", profilePic: profilePic2, rating: 5, review: "Absolutely loved it! The service was top-notch, would definitely come back." },
-  { name: "Vindya", profilePic: profilePic3, rating: 3, review: "It was okay. Could use some improvements, but overall decent." },
-  { name: "Tharini", profilePic: profilePic4, rating: 4, review: "Beautiful experience, the place is fantastic but a little crowded." },
-  { name: "Nishan", profilePic: profilePic5, rating: 2, review: "Not as expected, disappointing experience with some aspects." },
-  { name: "Kavya", profilePic: profilePic6, rating: 5, review: "A wonderful visit, highly recommend the service and views!" },
-];
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: { min: 1, max: 3 },
+  wordsPerSentence: { min: 4, max: 12 },
+});
+
+// Generate sample reviews with Lorem Ipsum
+const generateSampleReviews = () => {
+  const profilePics = [profilePic1, profilePic2, profilePic3, profilePic4, profilePic5, profilePic6];
+  const names = ["Ashini", "Lakshika", "Vindya", "Tharini", "Nishan", "Kavya"];
+  const reviews = [];
+
+  for (let i = 0; i < 10; i++) {
+    reviews.push({
+      name: names[i % names.length],
+      profilePic: profilePics[i % profilePics.length],
+      rating: Math.floor(Math.random() * 5) + 1, // Random rating between 1 and 5
+      review: lorem.generateSentences(2), // Generate 2 sentences of Lorem Ipsum
+    });
+  }
+  return reviews;
+};
 
 const Review = () => {
   const [newReview, setNewReview] = useState("");
   const [rating, setRating] = useState(0);
-  const [reviews, setReviews] = useState(sampleReviews);
+  const [reviews, setReviews] = useState(generateSampleReviews());
 
   const handleReviewChange = (e) => setNewReview(e.target.value);
   const handleRatingChange = (value) => setRating(value);

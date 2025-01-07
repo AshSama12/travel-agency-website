@@ -1,17 +1,29 @@
-/* Overall Container */
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Packages Container */
 .packages-container {
   padding: 20px;
   background-size: cover;
-  min-height: 100vh; /* Ensure the container fills the viewport height */
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .packages-title {
-  font-size: 24px;
-  color: white;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .basic-image {
@@ -23,13 +35,13 @@
 .search-bar {
   display: flex;
   align-items: center;
-  margin: 20px auto;
-  padding: 10px;
-  width: 80%;
+  width: 100%;
   max-width: 500px;
-  background-color: white;
+  padding: 10px;
   border-radius: 25px;
+  background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .search-icon {
@@ -39,65 +51,40 @@
 }
 
 .search-bar input {
-  width: 100%;
+  flex: 1;
   border: none;
   outline: none;
   font-size: 16px;
-  padding: 5px;
 }
 
-.search-bar input::placeholder {
-  color: #888;
-}
-
-/* Packages Grid with Horizontal Scroll */
+/* Packages Grid */
 .packages-grid {
-  display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 20px; /* Space between cards */
-  padding: 10px;
-  white-space: nowrap; /* Prevent wrapping */
-  scroll-behavior: smooth; /* Smooth scrolling */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
 }
 
-.packages-grid::-webkit-scrollbar {
-  height: 8px; /* Height of the scrollbar */
-}
-
-.packages-grid::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
-
-.packages-grid::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.packages-grid::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Individual Package Card */
 .package-card {
-  flex: 0 0 auto; /* Prevent shrinking */
-  width: 300px; /* Card width */
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 15px;
   background-color: #fff;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.package-card h2 {
-  font-size: 18px;
   color: #333;
 }
 
-.package-card p {
-  font-size: 14px;
-  color: #666;
+.package-card h2 {
+  font-size: 1.2rem;
   margin-bottom: 10px;
+}
+
+.package-card p {
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .explore-button {
@@ -107,23 +94,24 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .explore-button:hover {
   background-color: #0056b3;
 }
 
-/* Media Query for Responsive Design */
+/* Responsive Design */
 @media (max-width: 768px) {
+  .packages-title {
+    font-size: 2rem;
+  }
+
   .search-bar {
     width: 90%;
   }
 
-  .packages-grid {
-    gap: 10px;
-  }
-
   .package-card {
-    width: 250px;
+    padding: 10px;
   }
 }

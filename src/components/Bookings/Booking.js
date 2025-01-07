@@ -1,33 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // For navigation
 import './Booking.css';
 import background from '../../assets/background.png';
 
-import flag from '../../assets/flag.png'; // Add your flag image
+import flag from '../../assets/flag.png'; 
 import sigiriya from '../../assets/sigiriya.png';
 import yarla from '../../assets/yarla.png';
 import fort from '../../assets/fort.png';
 import kandy from '../../assets/kandy.png';
 
 function Booking() {
+  const navigate = useNavigate(); // Hook for navigation
+
   return (
     <div className="booking-container" style={{ backgroundImage: `url(${background})` }}>
-      {/* Blurred background */}
-      <div className="booking-content">
-        {/* Left side: Logo */}
-        <div className="booking-left">
-        
-        </div>
+      {/* Flag Section */}
+      <div className="flag-container">
+        <img src={flag} alt="Flag" className="flag-image" />
+      </div>
 
-        {/* Right side: Content */}
-        <div className="booking-right">
-          <h1 className="booking-heading">Booking Your Trip Now</h1>
-          <div className="flag-container">
-            <img src={flag} alt="Flag" className="flag-image" />
-          </div>
-          
-          {/* Question with radio buttons */}
-          <div className="traveler-question">
-            <p>Your are which type of traveler?</p>
+      {/* Blurred Middle Section */}
+      <div className="booking-content">
+        <h1 className="booking-heading">Booking Your Trip Now</h1>
+
+        {/* Traveler Question */}
+        <div className="traveler-question">
+          <p className="traveler-title">You are which type of traveler?</p>
+          <div className="radio-buttons">
             <label>
               <input type="radio" name="travelerType" value="solo" /> Solo
             </label>
@@ -35,16 +34,16 @@ function Booking() {
               <input type="radio" name="travelerType" value="group" /> Group
             </label>
           </div>
+        </div>
 
-          {/* Customize Package Section */}
-          <div className="customize-package">
-            <h2>Customize Your Package</h2>
-          </div>
-
-          {/* Booking Button */}
-          <div className="button-container">
-            <button className="book-now-button">Now</button>
-          </div>
+        {/* Booking Button */}
+        <div className="button-container">
+          <button
+            className="book-now-button"
+            onClick={() => navigate('/packages')} // Redirect to Packages page
+          >
+            Now
+          </button>
         </div>
       </div>
 

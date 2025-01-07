@@ -24,6 +24,7 @@ function Profile() {
           <li><Link to="/signup" onClick={toggleMenu}>Sign Up</Link></li>
           <li><Link to="/registration" onClick={toggleMenu}>Registration</Link></li>
           <li><Link to="/logout" onClick={toggleMenu}>Logout</Link></li>
+          <li><Link to="/viewprofile" onClick={toggleMenu}>View Profile</Link></li>
           
         </ul>
       )}

@@ -51,7 +51,7 @@ const Packages = () => {
         />
       </div>
 
-      {/* Packages Grid with Horizontal Scroll */}
+      {/* Packages Grid */}
       <div className="packages-grid">
         {filteredPackages.length > 0 ? (
           filteredPackages.map((pkg) => (

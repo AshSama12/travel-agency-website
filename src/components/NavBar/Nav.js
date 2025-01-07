@@ -23,7 +23,7 @@ function Nav() {
       </ul>
 
       {/* Profile Icon */}
-      <div className="profile-container">
+      <div className="profile-icon">
         <Profile />
       </div>
     </nav>

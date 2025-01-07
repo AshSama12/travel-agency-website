@@ -26,7 +26,7 @@
   
   .packages-heading {
     font-size: 3rem;
-    color: #fff;
+    color: #010101;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 50px;
     z-index: 1; /* Keep the heading above the background */
