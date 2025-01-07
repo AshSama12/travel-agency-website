@@ -1,77 +1,59 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Packages.css";
-import background from "../../assets/background.png";
-import basicImage from "../../assets/basic.png";
-import searchIcon from "../../assets/search.png";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './basic.css';
+import basicImage from '../../assets/basic.png';
+import searchIcon from '../../assets/search.png';
 
 const packages = [
-  { id: 1, title: "Cultural Gems", description: "Explore Sri Lanka's iconic heritage sites like Sigiriya and Polonnaruwa.", tags: ["heritage", "culture", "history", "Sigiriya", "Polonnaruwa"] },
-  { id: 2, title: "Beach Bliss", description: "Relax on the pristine beaches of Mirissa and Bentota.", tags: ["beach", "relax", "Mirissa", "Bentota", "ocean"] },
-  { id: 3, title: "Misty Hills", description: "Discover tea plantations, waterfalls, and scenic train rides in Ella and Nuwara Eliya.", tags: ["mountain", "tea plantations", "Ella", "Nuwara Eliya", "hills"] },
-  { id: 4, title: "Wildlife Quest", description: "Spot leopards and elephants on thrilling safaris in Yala and Wilpattu.", tags: ["wildlife", "safari", "Yala", "Wilpattu", "leopards", "elephants"] },
-  { id: 5, title: "Urban Vibes", description: "Dive into the vibrant city life of Colombo and Galle.", tags: ["city", "Colombo", "Galle", "urban"] },
-  { id: 6, title: "Thrill Seeker", description: "Enjoy rafting, hiking, and ziplining adventures in Ella and Kitulgala.", tags: ["adventure", "rafting", "hiking", "Ella", "Kitulgala"] },
-  { id: 7, title: "Wellness Retreat", description: "Rejuvenate with Ayurvedic treatments and yoga in serene settings.", tags: ["wellness", "Ayurveda", "yoga", "relaxation"] },
-  { id: 8, title: "Island Escape", description: "Visit stunning islands like Pigeon Island and Delft for snorkeling and beaches.", tags: ["island", "snorkeling", "Pigeon Island", "Delft"] },
-  { id: 9, title: "Festive Trails", description: "Experience Sri Lanka's grand festivals and cultural events.", tags: ["festivals", "culture", "events"] },
-  { id: 10, title: "Family Delight", description: "A fun-filled package with activities for the whole family.", tags: ["family", "kids", "fun", "activities"] },
+  { name: "Cultural Gems", tags: ["heritage", "culture", "history", "Sigiriya", "Polonnaruwa"] },
+  { name: "Beach Bliss", tags: ["beach", "relax", "Mirissa", "Bentota", "ocean"] },
+  { name: "Misty Hills", tags: ["mountain", "tea plantations", "Ella", "Nuwara Eliya", "hills"] },
+  { name: "Wildlife Quest", tags: ["wildlife", "safari", "Yala", "Wilpattu", "leopards", "elephants"] },
+  { name: "Urban Vibes", tags: ["city", "Colombo", "Galle", "urban"] },
+  { name: "Thrill Seeker", tags: ["adventure", "rafting", "hiking", "Ella", "Kitulgala"] },
+  { name: "Wellness Retreat", tags: ["wellness", "Ayurveda", "yoga", "relaxation"] },
+  { name: "Island Escape", tags: ["island", "snorkeling", "Pigeon Island", "Delft"] },
+  { name: "Festive Trails", tags: ["festivals", "culture", "events"] },
+  { name: "Family Delight", tags: ["family", "kids", "fun", "activities"] },
 ];
 
-const Packages = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+const Basic = () => {
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const filteredPackages = packages.filter(
-    (pkg) =>
-      pkg.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      pkg.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+  const filteredPackages = packages.filter(pkg =>
+    pkg.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    pkg.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
-  const handleViewDetails = (id) => {
-    navigate(`/packages/${id}`);
-  };
-
   return (
-    <div
-      className="packages-container"
-      style={{ backgroundImage: `url(${background})` }}
-    >
-      <h1 className="packages-title">Select Basic Packages</h1>
+    <div className="basic-packages">
+      <h1>Select Basic Packages</h1>
       <img src={basicImage} alt="Basic Packages" className="basic-image" />
-
-      {/* Search Bar */}
       <div className="search-bar">
-        <img src={searchIcon} alt="Search" className="search-icon" />
         <input
           type="text"
-          placeholder="Search packages (e.g., family, mountain, beach)"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search your package"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
+        <img src={searchIcon} alt="Search" className="search-icon" />
       </div>
-
-      {/* Packages Grid */}
-      <div className="packages-grid">
-        {filteredPackages.length > 0 ? (
-          filteredPackages.map((pkg) => (
-            <div key={pkg.id} className="package-card">
-              <h2>{pkg.title}</h2>
-              <p>{pkg.description}</p>
-              <button
-                className="explore-button"
-                onClick={() => handleViewDetails(pkg.id)}
-              >
-                View
-              </button>
-            </div>
-          ))
-        ) : (
-          <p className="no-results">No packages found for your search.</p>
-        )}
+      <div className="package-list">
+        {filteredPackages.map((pkg, index) => (
+          <div key={index} className="package-item">
+            <h2>{pkg.name}</h2>
+            <button 
+              className="view-button" 
+              onClick={() => navigate(`/package-details/${index}`)}
+            >
+              View More
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Packages;
+export default Basic;
