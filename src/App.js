@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from "./components/Slider/LandingPage";
 import Nav from './components/NavBar/Nav'; // Import NavBar
 import Footer from './components/Footer/Footer'; // Import Footer
 import Home from './components/Home/Home';
-import SignIn from './components/SignIn/SignIn';
+import Slider from "./components/Slider/Slider"; // Import Slider
+import SignIn from "./components/SignIn/SignIn";
 import SignUp from './components/SignUp/SignUp';
 import RegistrationHome from './components/Registration/RegistrationHome';
 import Registration1 from './components/Registration/Registration1';
@@ -34,7 +36,10 @@ function App() {
         {/* Main Content */}
         <main className="App-content">
           <Routes>
+            <Route path="/" element={<LandingPage />} /> {/* Default route */}
             <Route path="/" element={<Home />} />
+            <Route path="/" element={<><Home /><Slider /></>} /> {/* Add Slider */}
+            <Route path="/" element={<Slider />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/registration" element={<RegistrationHome />} />
