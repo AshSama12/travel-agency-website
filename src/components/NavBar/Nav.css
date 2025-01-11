@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center; /* Ensures all children are vertically aligned */
-  background-color: #000000; /* Deep brown for elegance */
+  background-color: #000000; /* Deep black for elegance */
   padding: 20px 40px; /* Increased padding for height */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for a premium feel */
 }
@@ -21,8 +21,9 @@
 .nav-logo-name {
   font-size: 24px; /* Larger text for brand name */
   font-weight: bold;
-  color: #ffffff; /* Gold color for text */
-  font-family: 'Georgia', serif; /* Elegant font */
+  color: #ffffff; /* White color for text */
+  font-family: "Georgia", serif; /* Elegant font */
+  text-decoration: none; /* Remove underline from the brand name */
 }
 
 .nav-links {
@@ -35,7 +36,7 @@
 }
 
 .nav-item {
-  text-decoration: none;
+  text-decoration: none; /* Remove underline */
   color: #ffd699; /* Softer gold for links */
   font-size: 18px; /* Slightly larger text */
   transition: color 0.3s ease-in-out;
@@ -45,8 +46,43 @@
   color: #fff; /* Highlight with white on hover */
 }
 
-.profile-container {
-  display: flex;
-  align-items: center; /* Ensures the profile icon aligns vertically */
-  margin-left: 30px; /* Space between nav links and profile */
+
+
+.personal-circle {
+  width: 50px; /* Adjust size for the personal circle */
+  height: 50px;
+  border-radius: 50%; /* Ensure the image is circular */
+  border: 2px solid #090909; /* Add a soft gold border for a premium look */
+  object-fit: cover; /* Ensure the image maintains aspect ratio */
+}
+
+
+.profile-menu-container {
+  position: absolute;
+  top: 60px; /* Adjust dropdown position */
+  right: 40px; /* Align to the right */
+  background-color: #fff; /* White background for the dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  border-radius: 8px;
+  z-index: 1000; /* Ensure dropdown is above other content */
+}
+
+.profile-menu {
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.profile-menu li {
+  margin: 10px 0;
+}
+
+.profile-menu li a {
+  text-decoration: none;
+  color: #333; /* Neutral text color */
+  font-size: 16px;
+}
+
+.profile-menu li a:hover {
+  color: #ffd699; /* Gold hover effect */
 }

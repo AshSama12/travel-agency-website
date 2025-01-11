@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from "./components/Slider/LandingPage";
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+
 import Nav from './components/NavBar/Nav'; // Import NavBar
 import Footer from './components/Footer/Footer'; // Import Footer
 import Home from './components/Home/Home';
@@ -23,50 +23,72 @@ import Basic from './components/Packages/basic'; // Import Basic component
 import PackageDetails from './components/Packages/PackageDetails';  // Import PackageDetails component
 import ViewProfile from './components/Profile/viewProfile';
 
-
 import './App.css';
 
 function App() {
+  const location = useLocation();
+
+  // List of paths that do not require Nav and Footer
+  const excludedPaths = [
+    '/signin',
+    '/signup',
+    '/registration',
+    '/registration1',
+    '/registration2',
+    '/registration3',
+    '/logout',
+    '/package-details/:id',
+    '/viewprofile'
+  ];
+
+  // Check if the current route matches any excluded paths
+  const shouldHideNavFooter = excludedPaths.some(path =>
+    location.pathname.startsWith(path)
+  );
+
+  return (
+    <div className="App">
+      {/* Render Nav and Footer only when not excluded */}
+      {!shouldHideNavFooter && <Nav />}
+      
+      {/* Main Content */}
+      <main className="App-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/" element={<><Home /><Slider /></>} /> {/* Add Slider */}
+          <Route path="/" element={<Slider />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/registration" element={<RegistrationHome />} />
+          <Route path="/registration1" element={<Registration1 />} />
+          <Route path="/registration2" element={<Registration2 />} />
+          <Route path="/registration3" element={<Registration3 />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/search" element={<Search />} /> {/* Search route */}
+          <Route path="/about" element={<About />} /> {/* About route */}
+          <Route path="/packages" element={<Packages />} /> {/* Packages route */}
+          <Route path="/reviews" element={<Review />} /> {/* Review route */}
+          <Route path="/contact" element={<Contact />} /> {/* Contact route */}
+          <Route path="/premium" element={<Premium />} />
+          <Route path="/basic" element={<Basic />} /> {/* Add this line */}
+          <Route path="/package-details/:id" element={<PackageDetails />} />
+          <Route path="/viewprofile" element={<ViewProfile />} />
+        </Routes>
+      </main>
+
+      {/* Render Footer only when not excluded */}
+      {!shouldHideNavFooter && <Footer />}
+    </div>
+  );
+}
+
+function AppWrapper() {
   return (
     <Router>
-      <div className="App">
-        {/* Navigation Bar */}
-        <Nav />
-
-        {/* Main Content */}
-        <main className="App-content">
-          <Routes>
-            <Route path="/" element={<LandingPage />} /> {/* Default route */}
-            <Route path="/" element={<Home />} />
-            <Route path="/" element={<><Home /><Slider /></>} /> {/* Add Slider */}
-            <Route path="/" element={<Slider />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/registration" element={<RegistrationHome />} />
-            <Route path="/registration1" element={<Registration1 />} />
-            <Route path="/registration2" element={<Registration2 />} />
-            <Route path="/registration3" element={<Registration3 />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/booking" element={<Booking />} />
-            <Route path="/search" element={<Search />} /> {/* Search route */}
-            <Route path="/about" element={<About />} /> {/* About route */}
-            <Route path="/packages" element={<Packages />} /> {/* Packages route */}
-            <Route path="/reviews" element={<Review />} /> {/* Review route */}
-            <Route path="/contact" element={<Contact />} /> {/* Contact route */}
-            <Route path="/premium" element={<Premium />} />
-            <Route path="/basic" element={<Basic />} /> {/* Add this line */}
-            <Route path="/package-details/:id" element={<PackageDetails />} />
-            <Route path="/viewprofile" element={<ViewProfile />} />
-
-            
-          </Routes>
-        </main>
-
-        {/* Footer */}
-        <Footer />
-      </div>
+      <App />
     </Router>
   );
 }
 
-export default App;
+export default AppWrapper;

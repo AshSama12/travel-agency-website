@@ -36,58 +36,106 @@ const places = [
 
 
 const Search = () => {
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const initialQuery = queryParams.get("query") || "";
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const initialQuery = queryParams.get("query") || "";
 
-    const [searchTerm, setSearchTerm] = useState(initialQuery);
-    const [selectedPlace, setSelectedPlace] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(initialQuery);
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [recentSearches, setRecentSearches] = useState([]);
 
-    useEffect(() => {
-        if (initialQuery) {
-            const match = places.find((place) =>
-                place.name.toLowerCase().includes(initialQuery.toLowerCase())
-            );
-            setSelectedPlace(match || null);
-        }
-    }, [initialQuery]);
+  useEffect(() => {
+    if (initialQuery) {
+      const match = places.find((place) =>
+        place.name.toLowerCase().includes(initialQuery.toLowerCase())
+      );
+      setSelectedPlace(match || null);
+    }
+  }, [initialQuery]);
 
-    const filteredPlaces = places.filter((place) =>
+  const filteredPlaces = searchTerm
+    ? places.filter((place) =>
         place.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+      )
+    : [];
 
-    return (
-        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-            <div className="search-page">
-                <div className="search-bar">
-                    <input
-                        type="text"
-                        placeholder="Search for places..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                    <ul className="suggestions">
-                        {filteredPlaces.map((place) => (
-                            <li key={place.name} onClick={() => setSelectedPlace(place)}>
-                                {place.name}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="map-container">
-                    {selectedPlace && (
-                        <GoogleMap
-                            center={{ lat: selectedPlace.lat, lng: selectedPlace.lng }}
-                            zoom={10}
-                            mapContainerStyle={{ height: "400px", width: "100%" }}
-                        >
-                            <Marker position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }} />
-                        </GoogleMap>
-                    )}
-                </div>
+  const handlePlaceClick = (place) => {
+    setSelectedPlace(place);
+    setSearchTerm(""); // Clear search input
+    if (!recentSearches.find((p) => p.name === place.name)) {
+      setRecentSearches((prev) => [place, ...prev.slice(0, 4)]); // Keep history to 5 items
+    }
+  };
+
+  return (
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      <div className="search-page">
+        <div className="video-section">
+          <video controls className="sri-lanka-video">
+            <source
+              src={require("../../assets/Sri Lanka _.mp4")}
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="search-section">
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search for places..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            {filteredPlaces.length > 0 && (
+              <ul className="suggestions">
+                {filteredPlaces.map((place) => (
+                  <li
+                    key={place.name}
+                    onClick={() => handlePlaceClick(place)}
+                  >
+                    {place.name}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className="map-and-history">
+            <div className="map-container">
+              {selectedPlace && (
+                <GoogleMap
+                  center={{
+                    lat: selectedPlace.lat,
+                    lng: selectedPlace.lng,
+                  }}
+                  zoom={10}
+                  mapContainerStyle={{
+                    height: "200px",
+                    width: "100%",
+                  }}
+                >
+                  <Marker
+                    position={{
+                      lat: selectedPlace.lat,
+                      lng: selectedPlace.lng,
+                    }}
+                  />
+                </GoogleMap>
+              )}
             </div>
-        </LoadScript>
-    );
+            <div className="recent-searches">
+              <h3>Recent Searches</h3>
+              <ul>
+                {recentSearches.map((place) => (
+                  <li key={place.name}>{place.name}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </LoadScript>
+  );
 };
 
 export default Search;

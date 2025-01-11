@@ -20,17 +20,17 @@ const PackageDetails = () => {
 
   // Array of images corresponding to package IDs
   const images = [
-    basicImage, 
-    BeachBliss, 
-    FamilyDelight, 
-    FestiveTrails, 
     HeritageExplore, 
-    IslandEscape, 
+    BeachBliss, 
     MistyHills, 
+    WildlifeQuest, 
     UrbanVibes, 
-    ThrillSeeker,
+    ThrillSeeker, 
+    WellnessRetreat, 
+    IslandEscape, 
+    FestiveTrails,
     WellnessRetreat,
-    WildlifeQuest,
+    FamilyDelight,
   ];
 
   const selectedImage = images[id] || basicImage; // Default to basicImage if ID is out of range
