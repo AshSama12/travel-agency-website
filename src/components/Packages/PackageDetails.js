@@ -1,6 +1,6 @@
-import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import './PackageDetails.css';
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import "./PackageDetails.css";
 import basicImage from '../../assets/basic.png'; // Example image
 // Importing each image directly
 import BeachBliss from '../../assets/basic packages/Beach Bills.png';
@@ -18,29 +18,37 @@ const PackageDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Array of images corresponding to package IDs
   const images = [
-    HeritageExplore, 
-    BeachBliss, 
-    MistyHills, 
-    WildlifeQuest, 
-    UrbanVibes, 
-    ThrillSeeker, 
-    WellnessRetreat, 
-    IslandEscape, 
-    FestiveTrails,
+    HeritageExplore,
+    BeachBliss,
+    MistyHills,
+    WildlifeQuest,
+    UrbanVibes,
+    ThrillSeeker,
     WellnessRetreat,
+    IslandEscape,
+    FestiveTrails,
     FamilyDelight,
   ];
 
-  const selectedImage = images[id] || basicImage; // Default to basicImage if ID is out of range
+  const selectedImage = images[id] || basicImage;
 
   return (
     <div className="package-details">
       <img src={selectedImage} alt="Selected Package" className="package-image" />
       <div className="button-group">
-        <button onClick={() => navigate(-1)} className="back-button">Go Back</button>
-        <button onClick={() => alert('Booked Successfully!')} className="book-button">Book Now</button>
+        <button onClick={() => navigate(-1)} className="back-button">
+          Go Back
+        </button>
+        <button
+          onClick={() => {
+            alert("Booked Successfully!");
+            navigate("/cart");
+          }}
+          className="book-button"
+        >
+          Book Now
+        </button>
       </div>
     </div>
   );

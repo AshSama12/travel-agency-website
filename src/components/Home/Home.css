@@ -25,7 +25,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(87, 86, 86, 0.4); /* Dim background */
+    background-color: rgba(0, 0, 0, 0.4); /* Dim background */
     z-index: 2;
 }
 
@@ -132,7 +132,7 @@
 
 .search-icon {
     padding: 10px;
-    background-color: #d17f1e;
+    background-color: #EA9121;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }

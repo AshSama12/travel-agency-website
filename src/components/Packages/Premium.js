@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Premium.css";
 import premiumImg from "../../assets/premiumImg.png";
 import optionButton from "../../assets/option button.png";
@@ -10,6 +11,7 @@ const Premium = () => {
   const [places, setPlaces] = useState([]);
   const [placeInput, setPlaceInput] = useState("");
   const [specialRequest, setSpecialRequest] = useState("");
+  const navigate = useNavigate();
 
   const addPlace = () => {
     if (placeInput.trim() !== "") {
@@ -19,7 +21,12 @@ const Premium = () => {
   };
 
   const confirmSelection = () => {
-    alert("Your premium package has been confirmed!\n\nPlaces: " + places.join(", ") + "\nSpecial Requests: " + specialRequest);
+    alert(
+      `Your premium package has been confirmed!\n\nPlaces: ${places.join(
+        ", "
+      )}\nSpecial Requests: ${specialRequest}`
+    );
+    navigate("/cart");
   };
 
   return (
@@ -48,7 +55,7 @@ const Premium = () => {
         <select>
           <option value="car">Car</option>
           <option value="van">Van</option>
-          <option value="tuk tuk">Bus</option>
+          <option value="bus">Bus</option>
         </select>
 
         <h2>Accommodation</h2>
@@ -59,11 +66,16 @@ const Premium = () => {
         </select>
       </div>
 
-      <button className="option-button" onClick={() => document.querySelector('.special-requests').style.display = 'block'}>
+      <button
+        className="option-button"
+        onClick={() =>
+          document.querySelector(".special-requests").style.display = "block"
+        }
+      >
         <img src={optionButton} alt="Option Button" />
       </button>
 
-      <div className="special-requests" style={{ display: 'none' }}>
+      <div className="special-requests" style={{ display: "none" }}>
         <h2>Add Requests for Your Comfort</h2>
         <textarea
           value={specialRequest}
@@ -81,15 +93,25 @@ const Premium = () => {
 
       <div className="driver-guide-box">
         <h2>Do you need a driver?</h2>
-        <label><input type="radio" name="driver" value="yes" /> Yes</label>
-        <label><input type="radio" name="driver" value="no" /> No</label>
+        <label>
+          <input type="radio" name="driver" value="yes" /> Yes
+        </label>
+        <label>
+          <input type="radio" name="driver" value="no" /> No
+        </label>
 
         <h2>Do you need a guide?</h2>
-        <label><input type="radio" name="guide" value="yes" /> Yes</label>
-        <label><input type="radio" name="guide" value="no" /> No</label>
+        <label>
+          <input type="radio" name="guide" value="yes" /> Yes
+        </label>
+        <label>
+          <input type="radio" name="guide" value="no" /> No
+        </label>
       </div>
 
-      <button className="confirm-button" onClick={confirmSelection}>Confirm</button>
+      <button className="confirm-button" onClick={confirmSelection}>
+        Confirm
+      </button>
     </div>
   );
 };

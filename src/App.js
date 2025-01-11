@@ -22,6 +22,9 @@ import Premium from './components/Packages/Premium'; // Import Premium component
 import Basic from './components/Packages/basic'; // Import Basic component
 import PackageDetails from './components/Packages/PackageDetails';  // Import PackageDetails component
 import ViewProfile from './components/Profile/viewProfile';
+import Cart from "./components/Payment/cart";
+import Payment from "./components/Payment/Payment";
+
 
 import './App.css';
 
@@ -37,7 +40,7 @@ function App() {
     '/registration2',
     '/registration3',
     '/logout',
-    '/package-details/:id',
+    '/package-details',
     '/viewprofile'
   ];
 
@@ -74,6 +77,8 @@ function App() {
           <Route path="/basic" element={<Basic />} /> {/* Add this line */}
           <Route path="/package-details/:id" element={<PackageDetails />} />
           <Route path="/viewprofile" element={<ViewProfile />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </main>
 
