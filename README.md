@@ -47,11 +47,11 @@ Vista Lanka is a user-friendly and visually appealing travel booking web applica
 This project focuses on providing travelers with a seamless experience for exploring and booking personalized travel packages.
 
 ## Features
-Modern Design: A responsive and visually engaging interface created using Figma.
-User Registration: Secure sign-in and registration process to ensure user trust and data protection.
-Package Customization: Options to select basic or premium travel packages tailored to user preferences.
-Preview Before Login: Eye-catching visuals to give users a glimpse of available packages before signing in.
-Streamlined Navigation: Intuitive layout for hassle-free browsing and booking.
+- **Modern Design**: A responsive and visually engaging interface created using Figma.
+- **User Registration**: Secure sign-in and registration process to ensure user trust and data protection.
+- **Package Customization**: Options to select basic or premium travel packages tailored to user preferences.
+- **Preview Before Login**: Eye-catching visuals to give users a glimpse of available packages before signing in.
+- **Streamlined Navigation**: Intuitive layout for hassle-free browsing and booking.
 
 ## Tools & Technologies
 Design: Figma
