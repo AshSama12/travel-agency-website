@@ -54,7 +54,9 @@ Vista Lanka is a user-friendly and visually appealing travel booking web applica
 ## 🛠️ Tools & Technologies
 
 - 🎨 **Design**: Figma
+
 - 💻 **Development**: Designed for future implementation with HTML, CSS, and JavaScript frameworks.
+
 - 🎯 **Objective**: The goal of Vista Lanka is to simplify travel planning and provide users with a platform that highlights Sri Lanka’s natural and cultural heritage.
 
 ---
