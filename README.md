@@ -1,4 +1,4 @@
-# ✈️ Vista Lanka Travel Agency Website 🏝️🌍
+# ✈️ Vista Lanka Travel Agency Website 🌍
 
 Vista Lanka is a comprehensive travel agency website that offers users the ability to explore travel packages, book trips, view reviews and ratings, and access various travel-related features. Built with a focus on user experience, responsiveness, and modern design, this project aims to create an interactive and user-friendly platform for travel enthusiasts.
 
